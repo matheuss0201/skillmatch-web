@@ -1,0 +1,865 @@
+/* ========================================
+   SKILLMATCH
+   GLASSMORPHISM
+======================================== */
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* VARIÁVEIS */
+
+:root {
+    --fundo: #18181b;
+    --fundo-card: rgba(39, 39, 42, 0.75);
+
+    --borda: rgba(255, 255, 255, 0.15);
+
+    --azul: #38bdf8;
+    --azul-escuro: #2563eb;
+
+    --branco: #ffffff;
+    --texto: #e4e4e7;
+    --cinza: #a1a1aa;
+}
+
+
+/* BODY */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--branco);
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(56, 189, 248, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+
+        var(--fundo);
+}
+
+
+/* CONTAINER */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+
+    background:
+        rgba(20, 20, 24, 0.75);
+
+    border-bottom:
+        1px solid var(--borda);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+}
+
+
+.header-content {
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.logo span {
+    color: var(--azul);
+}
+
+
+.logo:hover {
+
+    color: var(--azul);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.header p {
+
+    color:
+        var(--cinza);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    padding:
+        100px 0 80px;
+}
+
+
+.tag {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 14px;
+
+    margin-bottom:
+        20px;
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.35);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    color:
+        var(--azul);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+}
+
+
+.hero h1 {
+
+    max-width:
+        800px;
+
+    font-size:
+        clamp(40px, 7vw, 70px);
+
+    line-height:
+        1.05;
+
+    margin-bottom:
+        25px;
+}
+
+
+.hero p {
+
+    max-width:
+        650px;
+
+    color:
+        var(--texto);
+
+    font-size:
+        18px;
+
+    margin-bottom:
+        30px;
+}
+
+
+/* ========================================
+   BOTÃO HERO
+======================================== */
+
+.button-link {
+
+    display:
+        inline-block;
+
+    padding:
+        14px 24px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #2563eb
+        );
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    transition:
+        0.3s;
+}
+
+
+.button-link:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, 0.45);
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
+
+#perfil,
+#vagas {
+
+    padding:
+        40px 0;
+}
+
+
+/* ========================================
+   GLASSMORPHISM
+======================================== */
+
+.glass-card {
+
+    background:
+        var(--fundo-card);
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        22px;
+
+    padding:
+        35px;
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.4);
+
+    transition:
+        0.3s;
+}
+
+
+.glass-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(56, 189, 248, 0.35);
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.section-title {
+
+    display:
+        flex;
+
+    gap:
+        18px;
+
+    align-items:
+        flex-start;
+
+    margin-bottom:
+        30px;
+}
+
+
+.number {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(56, 189, 248, 0.12);
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.3);
+
+    color:
+        var(--azul);
+
+    font-weight:
+        bold;
+}
+
+
+h2 {
+
+    font-size:
+        28px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.section-title p {
+
+    color:
+        var(--cinza);
+}
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.campo {
+
+    margin-bottom:
+        22px;
+}
+
+
+.campo label {
+
+    display:
+        block;
+
+    color:
+        var(--texto);
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        8px;
+}
+
+
+.campo input,
+.campo select {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(0, 0, 0, 0.3);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    outline:
+        none;
+
+    transition:
+        0.3s;
+}
+
+
+.campo input::placeholder {
+
+    color:
+        #71717a;
+}
+
+
+.campo input:hover,
+.campo select:hover {
+
+    border-color:
+        var(--azul);
+}
+
+
+.campo input:focus,
+.campo select:focus {
+
+    border-color:
+        var(--azul);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(56, 189, 248, 0.15);
+}
+
+
+.campo select option {
+
+    background:
+        #27272a;
+
+    color:
+        white;
+}
+
+
+/* ========================================
+   HABILIDADES
+======================================== */
+
+.habilidades {
+
+    border:
+        none;
+
+    margin-bottom:
+        25px;
+}
+
+
+.habilidades legend {
+
+    color:
+        var(--texto);
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        12px;
+}
+
+
+.skills {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+}
+
+
+.skills label {
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color:
+        var(--texto);
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s;
+}
+
+
+.skills label:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--azul);
+
+    background:
+        rgba(56, 189, 248, 0.12);
+}
+
+
+.skills input {
+
+    accent-color:
+        var(--azul);
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+button {
+
+    width:
+        100%;
+
+    padding:
+        15px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #2563eb
+        );
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s;
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, 0.45);
+}
+
+
+button:active {
+
+    transform:
+        translateY(0);
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+#mensagem-status {
+
+    padding:
+        15px;
+
+    margin-bottom:
+        20px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color:
+        var(--cinza);
+
+    text-align:
+        center;
+}
+
+
+/* ========================================
+   VAGAS
+======================================== */
+
+#lista-vagas {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        18px;
+}
+
+
+.vaga-card {
+
+    padding:
+        24px;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(15, 15, 18, 0.75);
+
+    transition:
+        0.3s;
+}
+
+
+.vaga-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--azul);
+
+    background:
+        rgba(30, 30, 38, 0.95);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+.vaga-card h3 {
+
+    color:
+        var(--azul);
+
+    font-size:
+        21px;
+
+    margin-bottom:
+        12px;
+}
+
+
+.vaga-card p {
+
+    color:
+        var(--texto);
+
+    margin-bottom:
+        5px;
+}
+
+
+.vaga-card strong {
+
+    color:
+        white;
+}
+
+
+.compatibilidade {
+
+    display:
+        inline-block;
+
+    margin-top:
+        15px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.3);
+
+    color:
+        #86efac;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    margin-top:
+        60px;
+
+    padding:
+        30px 0;
+
+    border-top:
+        1px solid var(--borda);
+
+    color:
+        var(--cinza);
+}
+
+
+footer .container {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .header-content {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        padding:
+            18px 0;
+    }
+
+
+    .hero {
+
+        padding:
+            70px 0;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            42px;
+    }
+
+
+    .glass-card {
+
+        padding:
+            22px;
+    }
+
+
+    .section-title h2 {
+
+        font-size:
+            23px;
+    }
+
+
+    footer .container {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        gap:
+            8px;
+    }
+}

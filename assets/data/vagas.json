@@ -1,23 +1,52 @@
 [
-  {
-    "id": 1,
-    "titulo": "Desenvolvedor Front-End Júnior",
-    "empresa": "Tech Solutions",
-    "local": "Joinville - SC",
-    "tecnologias": ["HTML", "CSS", "JavaScript"]
-  },
-  {
-    "id": 2,
-    "titulo": "Desenvolvedor React Júnior",
-    "empresa": "WebDev",
-    "local": "Joinville - SC",
-    "tecnologias": ["HTML", "CSS", "JavaScript", "React"]
-  },
-  {
-    "id": 3,
-    "titulo": "Desenvolvedor Web",
-    "empresa": "StartTech",
-    "local": "Remoto",
-    "tecnologias": ["HTML", "CSS", "JavaScript"]
-  }
+    {
+        "id": 1,
+        "titulo": "Desenvolvedor Front-End Júnior",
+        "empresa": "Tech Solutions",
+        "local": "Joinville - SC",
+        "area": "Front-End",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "id": 2,
+        "titulo": "Desenvolvedor React Júnior",
+        "empresa": "WebDev",
+        "local": "Joinville - SC",
+        "area": "Front-End",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ]
+    },
+    {
+        "id": 3,
+        "titulo": "Desenvolvedor Web",
+        "empresa": "CodeLab",
+        "local": "Remoto",
+        "area": "Full Stack",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Git"
+        ]
+    },
+    {
+        "id": 4,
+        "titulo": "Desenvolvedor Back-End Júnior",
+        "empresa": "Dev Solutions",
+        "local": "Joinville - SC",
+        "area": "Back-End",
+        "tecnologias": [
+            "JavaScript",
+            "Node.js",
+            "Git"
+        ]
+    }
 ]
