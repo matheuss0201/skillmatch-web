@@ -1,7 +1,7 @@
 
-// ========================================
+
 // INTERFACE DO SKILLMATCH
-// ========================================
+
 
 export function mostrarVagas(vagas, resultados = []) {
 

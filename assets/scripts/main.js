@@ -1,7 +1,7 @@
-// ========================================
-// MAIN.JS
+
+
 // Arquivo principal do SkillMatch
-// ========================================
+
 
 import { carregarVagas } from "./dados.js";
 
@@ -16,9 +16,9 @@ import {
 } from "./ui.js";
 
 
-// ========================================
+
 // ELEMENTOS DO HTML
-// ========================================
+
 
 const formulario =
     document.querySelector("#formulario-candidato");
@@ -27,16 +27,14 @@ const mensagemStatus =
     document.querySelector("#mensagem-status");
 
 
-// ========================================
 // VARIÁVEIS
-// ========================================
+
 
 let vagas = [];
 
 
-// ========================================
 // CARREGAR VAGAS
-// ========================================
+
 
 async function iniciarSistema() {
 
@@ -63,9 +61,8 @@ async function iniciarSistema() {
 }
 
 
-// ========================================
 // FORMULÁRIO
-// ========================================
+
 
 formulario.addEventListener(
     "submit",
@@ -87,9 +84,8 @@ formulario.addEventListener(
             );
 
 
-        // ========================================
         // SALVAR DADOS NO LOCALSTORAGE
-        // ========================================
+     
 
         const candidato = {
 
@@ -108,9 +104,9 @@ formulario.addEventListener(
         );
 
 
-        // ========================================
+     
         // TRANSFORMAR JSON EM OBJETOS VAGA
-        // ========================================
+        
 
         const vagasObjetos =
             vagas.map(
@@ -124,9 +120,8 @@ formulario.addEventListener(
             );
 
 
-        // ========================================
         // ANALISAR COMPATIBILIDADE
-        // ========================================
+      
 
         const analise =
             analisarVagas(
@@ -136,9 +131,8 @@ formulario.addEventListener(
             );
 
 
-        // ========================================
         // MOSTRAR RESULTADO
-        // ========================================
+       
 
         const vagasAnalisadas =
             analise.resultados;
@@ -150,9 +144,9 @@ formulario.addEventListener(
         );
 
 
-        // ========================================
+        
         // RECOMENDAÇÃO
-        // ========================================
+      
 
         if (analise.melhorVaga) {
 
@@ -188,8 +182,7 @@ formulario.addEventListener(
 );
 
 
-// ========================================
 // INICIAR SISTEMA
-// ========================================
+
 
 iniciarSistema();

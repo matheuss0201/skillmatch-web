@@ -1,12 +1,12 @@
-// ========================================
+
 // MOTOR DO SKILLMATCH
 // Adaptado do projeto original
-// ========================================
 
 
-// ========================================
+
+
 // CLOSURE
-// ========================================
+
 
 function criarContadorAnalises() {
 
@@ -25,9 +25,9 @@ const contarAnalise =
     criarContadorAnalises();
 
 
-// ========================================
+
 // CLASSE PRINCIPAL
-// ========================================
+
 
 export class Vaga {
 
@@ -57,9 +57,9 @@ export class Vaga {
     }
 
 
-    // ========================================
+   
     // CÁLCULO DE COMPATIBILIDADE
-    // ========================================
+    
 
     calcularCompatibilidade(
         habilidades
@@ -109,9 +109,9 @@ export class Vaga {
 }
 
 
-// ========================================
+
 // HERANÇA
-// ========================================
+
 
 export class VagaFrontEnd
     extends Vaga {
@@ -133,9 +133,8 @@ export class VagaFrontEnd
 }
 
 
-// ========================================
 // CALLBACK
-// ========================================
+
 
 export function processarRecomendacao(
     resultado,
@@ -146,9 +145,8 @@ export function processarRecomendacao(
 }
 
 
-// ========================================
 // CONTADOR DE ANÁLISES
-// ========================================
+
 
 export function obterNumeroAnalise() {
 
@@ -156,9 +154,8 @@ export function obterNumeroAnalise() {
 }
 
 
-// ========================================
 // ANALISAR VAGAS
-// ========================================
+
 
 export function analisarVagas(
     vagas,
