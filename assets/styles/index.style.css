@@ -9,9 +9,9 @@
 /* VARIÁVEIS */
 
 :root {
+    /* TEMA ESCURO */
     --fundo: #18181b;
     --fundo-card: rgba(39, 39, 42, 0.75);
-
     --borda: rgba(255, 255, 255, 0.15);
 
     --azul: #38bdf8;
@@ -20,6 +20,37 @@
     --branco: #ffffff;
     --texto: #e4e4e7;
     --cinza: #a1a1aa;
+}
+
+/* TEMA CLARO */
+body.tema-claro {
+    --fundo: #f4f7fb;
+    --fundo-card: rgba(255, 255, 255, 0.85);
+    --borda: rgba(0, 0, 0, 0.12);
+
+    --branco: #111827;
+    --texto: #1f2937;
+    --cinza: #6b7280;
+}
+/* BOTÃO DE TEMA */
+
+.botao-tema {
+    width: auto;
+    min-width: 90px;
+    padding: 8px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.botao-tema:hover {
+    background: rgba(56, 189, 248, 0.1);
+    transform: none;
 }
 
 
@@ -1010,7 +1041,7 @@ footer .container {
 .todas-habilidades {
 
     color:
-        #86efac;
+        #09fa61;
 
     font-size:
         13px;
@@ -1072,4 +1103,62 @@ footer .container {
         transform: scale(1.01);
     }
 
+}
+/* AJUSTES DO TEMA CLARO */
+
+body.tema-claro .vaga-card {
+    background: #ffffff;
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.tema-claro .vaga-card h3 {
+    color: var(--azul-escuro);
+}
+
+body.tema-claro .vaga-card p {
+    color: var(--texto);
+}
+
+body.tema-claro .vaga-card strong {
+    color: #111827;
+}
+
+body.tema-claro .habilidades-resultado {
+    border-top-color: var(--borda);
+}
+
+body.tema-claro .nenhuma-habilidade {
+    color: var(--cinza);
+}
+
+body.tema-claro .compatibilidade {
+    color: #111827;
+}
+
+
+body.tema-claro {
+    background: #f1f5f9;
+}
+
+body.tema-claro .header {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.tema-claro .hero {
+    background: transparent;
+}
+
+body.tema-claro .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--borda);
+}
+
+body.tema-claro .section-description {
+    color: var(--cinza);
+}
+
+body.tema-claro footer {
+    color: var(--cinza);
 }

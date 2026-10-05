@@ -188,3 +188,18 @@ formulario.addEventListener(
 
 
 iniciarSistema();
+// Alternar tema claro e escuro
+
+const botaoTema = document.querySelector("#botao-tema");
+
+botaoTema.addEventListener("click", () => {
+    document.body.classList.toggle("tema-claro");
+
+    if (document.body.classList.contains("tema-claro")) {
+        botaoTema.textContent = "🌙 Tema";
+        botaoTema.setAttribute("aria-label", "Ativar tema escuro");
+    } else {
+        botaoTema.textContent = "☀️ Tema";
+        botaoTema.setAttribute("aria-label", "Ativar tema claro");
+    }
+});
