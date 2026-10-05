@@ -108,17 +108,19 @@ formulario.addEventListener(
         // TRANSFORMAR JSON EM OBJETOS VAGA
         
 
-        const vagasObjetos =
-            vagas.map(
-                vaga =>
-                    new VagaFrontEnd(
-                        vaga.empresa,
-                        vaga.titulo,
-                        vaga.tecnologias,
-                        vaga.regimeTrabalho || "Não informado"
-                    )
-            );
-
+     const vagasObjetos =
+    vagas.map(
+        vaga =>
+            new VagaFrontEnd(
+                vaga.empresa,
+                vaga.titulo,
+                vaga.tecnologias,
+                vaga.modalidade || "Não informado",
+                vaga.area,
+                vaga.salario || "Não informado",
+                vaga.id
+            )
+    );
 
         // ANALISAR COMPATIBILIDADE
       

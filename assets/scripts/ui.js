@@ -1,5 +1,5 @@
 
-
+// ========================================
 // INTERFACE DO SKILLMATCH
 
 
@@ -22,6 +22,9 @@ export function mostrarVagas(vagas, resultados = []) {
 
         return;
     }
+   console.log("Vagas recebidas:", vagas);
+console.log("Resultados recebidos:", resultados);
+
 
     vagas.forEach((vaga, index) => {
 
@@ -34,33 +37,36 @@ export function mostrarVagas(vagas, resultados = []) {
             resultado?.classificacao ?? "Ainda não analisada";
 
         const card = document.createElement("article");
+        console.log("Criando card:", vaga.titulo);
 
         card.className = "vaga-card";
 
-        card.innerHTML = `
-            <h3>${vaga.titulo}</h3>
+       card.innerHTML = `
+    <h3>${vaga.titulo}</h3>
 
-            <p><strong>Empresa:</strong> ${vaga.empresa}</p>
+    <p><strong>Empresa:</strong> ${vaga.empresa}</p>
 
-            <p><strong>Local:</strong> ${vaga.local}</p>
+    <p><strong>Local:</strong> ${vaga.local}</p>
 
-            <p><strong>Área:</strong> ${vaga.area}</p>
+    <p><strong>Área:</strong> ${vaga.area}</p>
 
-            <p>
-                <strong>Tecnologias:</strong>
-                ${vaga.tecnologias.join(", ")}
-            </p>
+    <p><strong>Salário:</strong> ${vaga.salario || "Não informado"}</p>
 
-            <div class="compatibilidade">
-                <strong>Compatibilidade:</strong>
-                ${percentual}%
-            </div>
+    <p><strong>Modalidade:</strong> ${vaga.modalidade || "Não informado"}</p>
 
-            <p class="classificacao">
-                ${classificacao}
-            </p>
-        `;
+    <p>
+        <strong>Tecnologias:</strong>
+        ${vaga.tecnologias.join(", ")}
+    </p>
 
-        listaVagas.appendChild(card);
+    <div class="compatibilidade">
+        <strong>Compatibilidade:</strong>
+        ${percentual}%
+    </div>
+
+    <p class="classificacao">
+        ${classificacao}
+    </p>
+`;
     });
 }

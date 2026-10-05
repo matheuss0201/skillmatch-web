@@ -1,52 +1,161 @@
 [
-    {
-        "id": 1,
-        "titulo": "Desenvolvedor Front-End Júnior",
-        "empresa": "Tech Solutions",
-        "local": "Joinville - SC",
-        "area": "Front-End",
-        "tecnologias": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ]
-    },
-    {
-        "id": 2,
-        "titulo": "Desenvolvedor React Júnior",
-        "empresa": "WebDev",
-        "local": "Joinville - SC",
-        "area": "Front-End",
-        "tecnologias": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React"
-        ]
-    },
-    {
-        "id": 3,
-        "titulo": "Desenvolvedor Web",
-        "empresa": "CodeLab",
-        "local": "Remoto",
-        "area": "Full Stack",
-        "tecnologias": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Git"
-        ]
-    },
-    {
-        "id": 4,
-        "titulo": "Desenvolvedor Back-End Júnior",
-        "empresa": "Dev Solutions",
-        "local": "Joinville - SC",
-        "area": "Back-End",
-        "tecnologias": [
-            "JavaScript",
-            "Node.js",
-            "Git"
-        ]
-    }
+  {
+    "id": 1,
+    "titulo": "Front-End Júnior",
+    "empresa": "Totvs",
+    "local": "Brasil",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ],
+    "salario": "R$ 3.500 - R$ 4.500",
+    "modalidade": "Remoto"
+  },
+  {
+    "id": 2,
+    "titulo": "Front-End Júnior",
+    "empresa": "DevSoft",
+    "local": "Joinville - SC",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Vue"
+    ],
+    "salario": "R$ 3.200 - R$ 4.200",
+    "modalidade": "Híbrido"
+  },
+  {
+    "id": 3,
+    "titulo": "Front-End Júnior",
+    "empresa": "WebStyle",
+    "local": "São Paulo - SP",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+      "Next.js"
+    ],
+    "salario": "R$ 3.000 - R$ 4.000",
+    "modalidade": "Presencial"
+  },
+  {
+    "id": 4,
+    "titulo": "Desenvolvedor Front-End Júnior",
+    "empresa": "TechWave",
+    "local": "Curitiba - PR",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git"
+    ],
+    "salario": "R$ 3.500 - R$ 4.500",
+    "modalidade": "Remoto"
+  },
+  {
+    "id": 5,
+    "titulo": "Desenvolvedor Front-End Júnior",
+    "empresa": "CodeLab",
+    "local": "Joinville - SC",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Bootstrap"
+    ],
+    "salario": "R$ 3.000 - R$ 4.000",
+    "modalidade": "Híbrido"
+  },
+  {
+    "id": 6,
+    "titulo": "Desenvolvedor Web Júnior",
+    "empresa": "DigitalHub",
+    "local": "Florianópolis - SC",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Figma"
+    ],
+    "salario": "R$ 3.400 - R$ 4.400",
+    "modalidade": "Remoto"
+  },
+  {
+    "id": 7,
+    "titulo": "Front-End Developer Júnior",
+    "empresa": "DevHouse",
+    "local": "São Paulo - SP",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Vue",
+      "Git"
+    ],
+    "salario": "R$ 3.300 - R$ 4.300",
+    "modalidade": "Híbrido"
+  },
+  {
+    "id": 8,
+    "titulo": "Desenvolvedor Front-End Júnior",
+    "empresa": "FrontLab",
+    "local": "Porto Alegre - RS",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ],
+    "salario": "R$ 3.600 - R$ 4.600",
+    "modalidade": "Remoto"
+  },
+  {
+    "id": 9,
+    "titulo": "Desenvolvedor Web Júnior",
+    "empresa": "PixelTech",
+    "local": "Blumenau - SC",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Angular"
+    ],
+    "salario": "R$ 3.500 - R$ 4.500",
+    "modalidade": "Híbrido"
+  },
+  {
+    "id": 10,
+    "titulo": "Front-End Júnior",
+    "empresa": "NovaWeb",
+    "local": "Joinville - SC",
+    "area": "Front-End",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "salario": "R$ 3.400 - R$ 4.400",
+    "modalidade": "Remoto"
+  }
 ]

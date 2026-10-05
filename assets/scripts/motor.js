@@ -31,23 +31,31 @@ const contarAnalise =
 
 export class Vaga {
 
-    constructor(
-        empresa,
-        cargo,
-        requisitos,
-        regimeTrabalho = ""
-    ) {
+   constructor(
+    empresa,
+    cargo,
+    requisitos,
+    regimeTrabalho = "",
+    area = "",
+    salario = "",
+    id = null
+) {
 
-        this.empresa = empresa;
+    this.empresa = empresa;
 
-        this.cargo = cargo;
+    this.cargo = cargo;
 
-        this.requisitos = requisitos;
+    this.requisitos = requisitos;
 
-        this.regimeTrabalho =
-            regimeTrabalho;
-    }
+    this.regimeTrabalho = regimeTrabalho;
 
+    this.area = area;
+
+    this.salario = salario;
+
+    this.id = id;
+
+}
 
     // Uso do THIS
 
@@ -117,21 +125,25 @@ export class VagaFrontEnd
     extends Vaga {
 
     constructor(
+    empresa,
+    cargo,
+    requisitos,
+    regimeTrabalho,
+    area,
+    salario,
+    id
+) {
+    super(
         empresa,
         cargo,
         requisitos,
-        regimeTrabalho
-    ) {
-
-        super(
-            empresa,
-            cargo,
-            requisitos,
-            regimeTrabalho
-        );
-    }
+        regimeTrabalho,
+        area,
+        salario,
+        id
+    );
 }
-
+    }
 
 // CALLBACK
 
