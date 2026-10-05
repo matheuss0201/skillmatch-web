@@ -1018,3 +1018,58 @@ footer .container {
     font-weight:
         bold;
 }
+/* RESPONSIVIDADE MOBILE */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .glass-card {
+        padding: 20px;
+    }
+
+    .skills {
+        gap: 8px;
+    }
+
+    .skills label {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .vaga-card {
+        padding: 18px;
+    }
+
+    .vaga-card h3 {
+        font-size: 19px;
+    }
+
+    .vaga-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .compatibilidade {
+        font-size: 13px;
+    }
+
+    .melhor-match {
+        transform: scale(1.01);
+    }
+
+}
