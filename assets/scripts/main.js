@@ -82,6 +82,8 @@ formulario.addEventListener(
             )].map(
                 input => input.value
             );
+            const vagaDiferencial =
+    document.querySelector("#vaga-diferencial").value.trim();
 
 
         // SALVAR DADOS NO LOCALSTORAGE
@@ -93,7 +95,11 @@ formulario.addEventListener(
 
             area,
 
-            habilidades
+            habilidades,
+
+            vagaDiferencial
+
+
 
         };
 
@@ -121,6 +127,63 @@ formulario.addEventListener(
                 vaga.id
             )
     );
+    let vagasParaExibir = [...vagas];
+
+   // VAGA DIFERENCIAL
+
+if (vagaDiferencial) {
+
+    const tecnologiasConhecidas = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Git",
+        "Node.js",
+        "TypeScript",
+        "Vue",
+        "Angular",
+        "Tailwind",
+        "Next.js",
+        "Bootstrap",
+        "Figma"
+    ];
+
+    const tecnologiasDiferencial =
+        tecnologiasConhecidas.filter(tecnologia =>
+            vagaDiferencial
+                .toLowerCase()
+                .includes(tecnologia.toLowerCase())
+        );
+
+    if (tecnologiasDiferencial.length > 0) {
+
+        const vagaPersonalizada = {
+            id: "vaga-diferencial",
+            titulo: vagaDiferencial,
+            empresa: "Vaga personalizada",
+            local: "Personalizada",
+            area: area,
+            tecnologias: tecnologiasDiferencial,
+            salario: "Não informado",
+            modalidade: "Personalizada"
+        };
+
+       vagasParaExibir.push(vagaPersonalizada);
+
+        vagasObjetos.push(
+            new VagaFrontEnd(
+                vagaPersonalizada.empresa,
+                vagaPersonalizada.titulo,
+                vagaPersonalizada.tecnologias,
+                vagaPersonalizada.modalidade,
+                vagaPersonalizada.area,
+                vagaPersonalizada.salario,
+                vagaPersonalizada.id
+            )
+        );
+    }
+}
 
         // ANALISAR COMPATIBILIDADE
       
@@ -140,10 +203,10 @@ formulario.addEventListener(
             analise.resultados;
 
 
-        mostrarVagas(
-            vagas,
-            vagasAnalisadas
-        );
+       mostrarVagas(
+    vagasParaExibir,
+    vagasAnalisadas
+);
 
 
         

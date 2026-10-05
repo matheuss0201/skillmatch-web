@@ -1162,3 +1162,43 @@ body.tema-claro .section-description {
 body.tema-claro footer {
     color: var(--cinza);
 }
+/* VAGA DIFERENCIAL */
+
+.vaga-diferencial {
+    margin-top: 20px;
+}
+
+.vaga-diferencial label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.vaga-diferencial input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: var(--fundo-card);
+    color: var(--texto);
+    font-size: 15px;
+    outline: none;
+}
+
+.vaga-diferencial input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.vaga-diferencial small {
+    display: block;
+    margin-top: 7px;
+    color: var(--cinza);
+    font-size: 13px;
+}
+/* Remove a borda do campo de habilidades */
+
+fieldset {
+    border: none;
+}
