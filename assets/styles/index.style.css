@@ -839,3 +839,182 @@ footer .container {
             8px;
     }
 }
+
+/* =================================
+   MELHOR MATCH
+================================= */
+
+.vaga-card.melhor-match {
+
+    border: 2px solid var(--azul);
+
+    background:
+        rgba(56, 189, 248, 0.10);
+
+    box-shadow:
+        0 0 25px
+        rgba(56, 189, 248, 0.25);
+
+    transform:
+        scale(1.01);
+}
+
+
+.vaga-card.melhor-match:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.01);
+
+    border-color:
+        var(--azul);
+
+    box-shadow:
+        0 15px 40px
+        rgba(56, 189, 248, 0.35);
+}
+
+
+/* ETIQUETA MELHOR MATCH */
+
+.melhor-match-badge {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(56, 189, 248, 0.15);
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.4);
+
+    color:
+        var(--azul);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.5px;
+}
+/* =================================
+   HABILIDADES DA VAGA
+================================= */
+
+.habilidades-resultado {
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid var(--borda);
+}
+
+
+.habilidades-resultado > strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--texto);
+}
+
+
+.lista-habilidades {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+/* HABILIDADE */
+
+.habilidade {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ENCONTRADA */
+
+.habilidade.encontrada {
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.35);
+
+    color:
+        #86efac;
+}
+
+
+/* FALTANTE */
+
+.habilidade.faltante {
+
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.35);
+
+    color:
+        #fca5a5;
+}
+
+
+/* NENHUMA */
+
+.nenhuma-habilidade {
+
+    color:
+        var(--cinza);
+
+    font-size:
+        13px;
+}
+
+
+/* TODAS AS HABILIDADES */
+
+.todas-habilidades {
+
+    color:
+        #86efac;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+}
