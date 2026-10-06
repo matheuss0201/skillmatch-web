@@ -59,6 +59,73 @@ async function iniciarSistema() {
 
     }
 }
+// ========================================
+// HISTÓRICO DE PESQUISAS
+// ========================================
+
+function salvarHistorico(candidato) {
+
+    const historico =
+        JSON.parse(
+            localStorage.getItem("historicoSkillMatch")
+        ) || [];
+
+    historico.unshift({
+        nome: candidato.nome,
+        area: candidato.area,
+        vaga: candidato.vagaDiferencial || "Vagas disponíveis",
+        data: new Date().toLocaleString("pt-BR")
+    });
+
+    localStorage.setItem(
+        "historicoSkillMatch",
+        JSON.stringify(historico)
+    );
+}
+
+
+function mostrarHistorico() {
+
+    const lista =
+        document.querySelector("#lista-historico");
+
+    if (!lista) return;
+
+    const historico =
+        JSON.parse(
+            localStorage.getItem("historicoSkillMatch")
+        ) || [];
+
+    if (historico.length === 0) {
+
+        lista.innerHTML = `
+            <p class="mensagem-vazia">
+                Nenhuma pesquisa realizada ainda.
+            </p>
+        `;
+
+        return;
+    }
+
+    lista.innerHTML =
+        historico.map(item => `
+            <article class="historico-item">
+
+                <strong>
+                    ${item.vaga}
+                </strong>
+
+                <p>
+                    Área: ${item.area}
+                </p>
+
+                <small>
+                    ${item.data}
+                </small>
+
+            </article>
+        `).join("");
+}
 
 
 // FORMULÁRIO
@@ -102,6 +169,10 @@ formulario.addEventListener(
 
 
         };
+        
+        salvarHistorico(candidato);
+mostrarHistorico();
+
 
 
         localStorage.setItem(
@@ -251,18 +322,54 @@ if (vagaDiferencial) {
 
 
 iniciarSistema();
-// Alternar tema claro e escuro
+//mostrarHistorigo();
+// ALTERNAR TEMA CLARO E ESCURO
 
 const botaoTema = document.querySelector("#botao-tema");
 
-botaoTema.addEventListener("click", () => {
-    document.body.classList.toggle("tema-claro");
+if (botaoTema) {
 
-    if (document.body.classList.contains("tema-claro")) {
-        botaoTema.textContent = "🌙 Tema";
-        botaoTema.setAttribute("aria-label", "Ativar tema escuro");
-    } else {
-        botaoTema.textContent = "☀️ Tema";
-        botaoTema.setAttribute("aria-label", "Ativar tema claro");
-    }
-});
+    botaoTema.addEventListener("click", () => {
+
+        document.body.classList.toggle("tema-claro");
+
+        if (document.body.classList.contains("tema-claro")) {
+
+            botaoTema.textContent = "🌙 Tema";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar tema escuro"
+            );
+
+        } else {
+
+            botaoTema.textContent = "☀️ Tema";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar tema claro"
+            );
+        }
+
+    });
+
+}
+
+// LIMPAR HISTÓRICO
+
+const botaoLimparHistorico =
+    document.querySelector("#limpar-historico");
+
+if (botaoLimparHistorico) {
+
+    botaoLimparHistorico.addEventListener(
+        "click",
+        () => {
+
+            localStorage.removeItem(
+                "historicoSkillMatch"
+            );
+
+            mostrarHistorico();
+        }
+    );
+}
