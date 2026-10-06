@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,40 +8,45 @@
 
     <meta
         name="description"
-        content="SkillMatch - encontre vagas compatíveis com suas habilidades."
+        content="SkillMatch conecta profissionais às vagas de emprego mais compatíveis com suas habilidades."
     >
 
-    <title>SkillMatch</title>
+    <meta
+        name="keywords"
+        content="vagas de emprego, tecnologia, front-end, programação, carreira, habilidades"
+    >
 
-    
+    <meta name="author" content="Matheus Alves">
+
+    <title>SkillMatch | Encontre sua vaga ideal</title>
+
     <link
         rel="stylesheet"
         href="./assets/styles/index.style.css"
     >
-
 </head>
 
 
-<HEADER>
+ <header class="header">
+    <div class="container header-content">
+        <a href="#" class="logo">Skill<span>Match</span></a>
 
-    
- 
+        <p>Conectando talentos às oportunidades</p>
 
-    <header class="header">
+      <button
+    type="button"
+    id="botao-tema"
+    class="botao-tema"
+    aria-label="Alternar tema"
+    title="Alternar tema"
+>
+    ☀️ Tema
+</button>
+        
+    </div>
+</header>
 
-        <div class="container header-content">
-
-            <a href="#" class="logo">
-                Skill<span>Match</span>
-            </a>
-
-            <p>
-              Conectando talentos às oportunidades
-            </p>
-
-        </div>
-
-    </header>
+   
 
 
 
@@ -86,19 +87,20 @@
         <!-- PERFIL -->
         
 
-        <section id="perfil" class="section">
-
+       <section
+    id="perfil"
+    class="section"
+    aria-labelledby="titulo-perfil"
+>
             <div class="container">
 
-                <div class="section-number">
-                    01
-                </div>
+                
 
                 <div class="glass-card">
 
-                    <h2>
-                        Seu perfil profissional
-                    </h2>
+                    <h2 id="titulo-perfil">
+    Seu perfil profissional
+</h2>
 
                     <p class="section-description">
                         Informe seus dados para encontrar
@@ -240,7 +242,19 @@
                             </label>
 
                         </fieldset>
+<div class="campo vaga-diferencial">
+    <label for="vaga-diferencial">Vaga diferencial</label>
 
+    <input
+        type="text"
+        id="vaga-diferencial"
+        placeholder="Digite a vaga que você procura"
+    >
+
+    <small>
+        Digite uma vaga específica para receber uma análise personalizada.
+    </small>
+</div>
 
                         <button type="submit">
                             Analisar vagas
@@ -266,19 +280,21 @@
         
         <!-- VAGAS -->
         
-
-        <section id="vagas" class="section">
+<section
+    id="vagas"
+    class="section"
+    aria-labelledby="titulo-vagas"
+>
 
             <div class="container">
 
                 <div class="section-number">
-                    02
+                    
                 </div>
 
-                <h2>
-                    Vagas disponíveis
-                </h2>
-
+                <h2 id="titulo-vagas">
+    Vagas disponíveis
+</h2>
                 <p class="section-description">
                     Encontre oportunidades compatíveis
                     com seu perfil.
@@ -294,7 +310,42 @@
             </div>
 
         </section>
+</section>
 
+<!-- HISTÓRICO -->
+<section
+    id="historico"
+    class="section"
+    aria-labelledby="titulo-historico"
+>
+    <div class="container">
+
+        <h2 id="titulo-historico">
+            Histórico de pesquisas
+        </h2>
+
+        <p class="section-description">
+            Veja suas pesquisas recentes.
+        </p>
+
+        <div id="lista-historico">
+            <p class="mensagem-vazia">
+                Nenhuma pesquisa realizada ainda.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            id="limpar-historico"
+            class="botao-historico"
+        >
+            🗑️ Limpar histórico
+        </button>
+
+    </div>
+</section>
+
+</main>
     </main>
 
 

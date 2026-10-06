@@ -59,6 +59,73 @@ async function iniciarSistema() {
 
     }
 }
+// ========================================
+// HISTÓRICO DE PESQUISAS
+// ========================================
+
+function salvarHistorico(candidato) {
+
+    const historico =
+        JSON.parse(
+            localStorage.getItem("historicoSkillMatch")
+        ) || [];
+
+    historico.unshift({
+        nome: candidato.nome,
+        area: candidato.area,
+        vaga: candidato.vagaDiferencial || "Vagas disponíveis",
+        data: new Date().toLocaleString("pt-BR")
+    });
+
+    localStorage.setItem(
+        "historicoSkillMatch",
+        JSON.stringify(historico)
+    );
+}
+
+
+function mostrarHistorico() {
+
+    const lista =
+        document.querySelector("#lista-historico");
+
+    if (!lista) return;
+
+    const historico =
+        JSON.parse(
+            localStorage.getItem("historicoSkillMatch")
+        ) || [];
+
+    if (historico.length === 0) {
+
+        lista.innerHTML = `
+            <p class="mensagem-vazia">
+                Nenhuma pesquisa realizada ainda.
+            </p>
+        `;
+
+        return;
+    }
+
+    lista.innerHTML =
+        historico.map(item => `
+            <article class="historico-item">
+
+                <strong>
+                    ${item.vaga}
+                </strong>
+
+                <p>
+                    Área: ${item.area}
+                </p>
+
+                <small>
+                    ${item.data}
+                </small>
+
+            </article>
+        `).join("");
+}
 
 
 // FORMULÁRIO
@@ -82,6 +149,8 @@ formulario.addEventListener(
             )].map(
                 input => input.value
             );
+            const vagaDiferencial =
+    document.querySelector("#vaga-diferencial").value.trim();
 
 
         // SALVAR DADOS NO LOCALSTORAGE
@@ -93,9 +162,17 @@ formulario.addEventListener(
 
             area,
 
-            habilidades
+            habilidades,
+
+            vagaDiferencial
+
+
 
         };
+        
+        salvarHistorico(candidato);
+mostrarHistorico();
+
 
 
         localStorage.setItem(
@@ -121,6 +198,63 @@ formulario.addEventListener(
                 vaga.id
             )
     );
+    let vagasParaExibir = [...vagas];
+
+   // VAGA DIFERENCIAL
+
+if (vagaDiferencial) {
+
+    const tecnologiasConhecidas = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Git",
+        "Node.js",
+        "TypeScript",
+        "Vue",
+        "Angular",
+        "Tailwind",
+        "Next.js",
+        "Bootstrap",
+        "Figma"
+    ];
+
+    const tecnologiasDiferencial =
+        tecnologiasConhecidas.filter(tecnologia =>
+            vagaDiferencial
+                .toLowerCase()
+                .includes(tecnologia.toLowerCase())
+        );
+
+    if (tecnologiasDiferencial.length > 0) {
+
+        const vagaPersonalizada = {
+            id: "vaga-diferencial",
+            titulo: vagaDiferencial,
+            empresa: "Vaga personalizada",
+            local: "Personalizada",
+            area: area,
+            tecnologias: tecnologiasDiferencial,
+            salario: "Não informado",
+            modalidade: "Personalizada"
+        };
+
+       vagasParaExibir.push(vagaPersonalizada);
+
+        vagasObjetos.push(
+            new VagaFrontEnd(
+                vagaPersonalizada.empresa,
+                vagaPersonalizada.titulo,
+                vagaPersonalizada.tecnologias,
+                vagaPersonalizada.modalidade,
+                vagaPersonalizada.area,
+                vagaPersonalizada.salario,
+                vagaPersonalizada.id
+            )
+        );
+    }
+}
 
         // ANALISAR COMPATIBILIDADE
       
@@ -140,10 +274,10 @@ formulario.addEventListener(
             analise.resultados;
 
 
-        mostrarVagas(
-            vagas,
-            vagasAnalisadas
-        );
+       mostrarVagas(
+    vagasParaExibir,
+    vagasAnalisadas
+);
 
 
         
@@ -188,3 +322,54 @@ formulario.addEventListener(
 
 
 iniciarSistema();
+//mostrarHistorigo();
+// ALTERNAR TEMA CLARO E ESCURO
+
+const botaoTema = document.querySelector("#botao-tema");
+
+if (botaoTema) {
+
+    botaoTema.addEventListener("click", () => {
+
+        document.body.classList.toggle("tema-claro");
+
+        if (document.body.classList.contains("tema-claro")) {
+
+            botaoTema.textContent = "🌙 Tema";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar tema escuro"
+            );
+
+        } else {
+
+            botaoTema.textContent = "☀️ Tema";
+            botaoTema.setAttribute(
+                "aria-label",
+                "Ativar tema claro"
+            );
+        }
+
+    });
+
+}
+
+// LIMPAR HISTÓRICO
+
+const botaoLimparHistorico =
+    document.querySelector("#limpar-historico");
+
+if (botaoLimparHistorico) {
+
+    botaoLimparHistorico.addEventListener(
+        "click",
+        () => {
+
+            localStorage.removeItem(
+                "historicoSkillMatch"
+            );
+
+            mostrarHistorico();
+        }
+    );
+}

@@ -5,9 +5,6 @@
 
 
 
-// CLOSURE
-
-
 function criarContadorAnalises() {
 
     let totalAnalises = 0;
@@ -25,39 +22,29 @@ const contarAnalise =
     criarContadorAnalises();
 
 
-
 // CLASSE PRINCIPAL
-
 
 export class Vaga {
 
-   constructor(
-    empresa,
-    cargo,
-    requisitos,
-    regimeTrabalho = "",
-    area = "",
-    salario = "",
-    id = null
-) {
+    constructor(
+        empresa,
+        cargo,
+        requisitos,
+        regimeTrabalho = "",
+        area = "",
+        salario = "",
+        id = null
+    ) {
 
-    this.empresa = empresa;
+        this.empresa = empresa;
+        this.cargo = cargo;
+        this.requisitos = requisitos;
+        this.regimeTrabalho = regimeTrabalho;
+        this.area = area;
+        this.salario = salario;
+        this.id = id;
+    }
 
-    this.cargo = cargo;
-
-    this.requisitos = requisitos;
-
-    this.regimeTrabalho = regimeTrabalho;
-
-    this.area = area;
-
-    this.salario = salario;
-
-    this.id = id;
-
-}
-
-    // Uso do THIS
 
     exibirResumo() {
 
@@ -65,20 +52,19 @@ export class Vaga {
     }
 
 
-   
-    // CÁLCULO DE COMPATIBILIDADE
-    
+    calcularCompatibilidade(habilidades) {
 
-    calcularCompatibilidade(
-        habilidades
-    ) {
+        const habilidadesEncontradas =
+            this.requisitos.filter(
+                requisito =>
+                    habilidades.includes(requisito)
+            );
+
 
         const habilidadesFaltantes =
             this.requisitos.filter(
                 requisito =>
-                    !habilidades.includes(
-                        requisito
-                    )
+                    !habilidades.includes(requisito)
             );
 
 
@@ -86,15 +72,11 @@ export class Vaga {
             this.requisitos.length;
 
 
-        const correspondidas =
-            totalRequisitos -
-            habilidadesFaltantes.length;
-
-
         if (totalRequisitos === 0) {
 
             return {
                 percentual: 0,
+                habilidadesEncontradas: [],
                 habilidadesFaltantes: []
             };
         }
@@ -103,37 +85,30 @@ export class Vaga {
         const percentual =
             Math.round(
                 (
-                    correspondidas /
+                    habilidadesEncontradas.length /
                     totalRequisitos
                 ) * 100
             );
 
 
         return {
+
             percentual,
+
+            habilidadesEncontradas,
+
             habilidadesFaltantes
         };
     }
 }
 
 
-
 // HERANÇA
-
 
 export class VagaFrontEnd
     extends Vaga {
 
     constructor(
-    empresa,
-    cargo,
-    requisitos,
-    regimeTrabalho,
-    area,
-    salario,
-    id
-) {
-    super(
         empresa,
         cargo,
         requisitos,
@@ -141,12 +116,22 @@ export class VagaFrontEnd
         area,
         salario,
         id
-    );
-}
+    ) {
+
+        super(
+            empresa,
+            cargo,
+            requisitos,
+            regimeTrabalho,
+            area,
+            salario,
+            id
+        );
     }
+}
+
 
 // CALLBACK
-
 
 export function processarRecomendacao(
     resultado,
@@ -157,8 +142,7 @@ export function processarRecomendacao(
 }
 
 
-// CONTADOR DE ANÁLISES
-
+// CONTADOR
 
 export function obterNumeroAnalise() {
 
@@ -168,7 +152,6 @@ export function obterNumeroAnalise() {
 
 // ANALISAR VAGAS
 
-
 export function analisarVagas(
     vagas,
     habilidades,
@@ -177,7 +160,6 @@ export function analisarVagas(
 
     const resultados = vagas
 
-        // FILTER
         .filter(vaga => {
 
             return (
@@ -186,8 +168,6 @@ export function analisarVagas(
             );
         })
 
-
-        // MAP
         .map(vaga => {
 
             const resultado =
@@ -199,16 +179,12 @@ export function analisarVagas(
             let classificacao;
 
 
-            if (
-                resultado.percentual >= 80
-            ) {
+            if (resultado.percentual >= 80) {
 
                 classificacao =
                     "Alta compatibilidade";
 
-            } else if (
-                resultado.percentual >= 50
-            ) {
+            } else if (resultado.percentual >= 50) {
 
                 classificacao =
                     "Média compatibilidade";
@@ -222,6 +198,8 @@ export function analisarVagas(
 
             return {
 
+                id: vaga.id,
+
                 vaga,
 
                 percentual:
@@ -229,22 +207,22 @@ export function analisarVagas(
 
                 classificacao,
 
+                habilidadesEncontradas:
+                    resultado.habilidadesEncontradas,
+
                 habilidadesFaltantes:
                     resultado.habilidadesFaltantes
             };
         });
 
 
-    // REDUCE
     const melhorVaga =
         resultados.reduce(
             (maior, atual) => {
 
                 if (!maior) {
-
                     return atual;
                 }
-
 
                 return atual.percentual >
                     maior.percentual
@@ -255,8 +233,6 @@ export function analisarVagas(
             null
         );
 
-
-    // Incrementa o contador
 
     const numeroAnalise =
         contarAnalise();
@@ -270,4 +246,6 @@ export function analisarVagas(
 
         numeroAnalise
     };
-} 
+}
+
+
